@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Test Plan for React Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This test plan outlines the strategy and test cases for testing React components in our project. It covers different types of tests for individual components and provides guidance on ensuring the reliability and correctness of our components.
 
-## Available Scripts
+## Components
 
-In the project directory, you can run:
+### 1. Header Component
 
-### `npm start`
+#### Type of Tests
+- **Unit Tests:**
+  - Verify rendering of the component.
+  - Test interactions with the input element.
+  - Validate the `addItem` callback on form submission.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Test Cases
+1. Ensure that the header is rendered correctly.
+2. Test if the input field is present.
+3. Simulate form submission and validate the `addItem` callback.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Footer Component
 
-### `npm test`
+#### Type of Tests
+- **Unit Tests:**
+  - Validate rendering of filters and clear completed button.
+  - Test interactions with navigation links.
+  - Validate the `removeCompleted` callback.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Test Cases
+1. Verify that the footer is rendered properly.
+2. Test if navigation links are highlighted based on the current route.
+3. Validate that the item count is displayed correctly.
+4. Test the `removeCompleted` callback on the "Clear completed" button click.
 
-### `npm run build`
+### 3. Main Component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Type of Tests
+- **Unit Tests:**
+  - Test rendering of the main section.
+  - Validate the rendering and behavior of the toggle-all checkbox.
+  - Test the `toggleAll` callback.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Test Cases
+1. Verify that the main section is rendered correctly.
+2. Test the rendering and behavior of the toggle-all checkbox.
+3. Validate the `toggleAll` callback when the checkbox is clicked.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Item Component
 
-### `npm run eject`
+#### Type of Tests
+- **Unit Tests:**
+  - Test rendering of individual todo items.
+  - Validate interactions like toggling completion and removing an item.
+  - Test the `handleDoubleClick`, `handleBlur`, and `handleUpdate` callbacks.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Test Cases
+1. Ensure that individual todo items are rendered correctly.
+2. Test the toggling of completion on checkbox click.
+3. Validate the behavior of double-clicking on a todo item.
+4. Test the `handleBlur` callback on input blur.
+5. Test the `handleUpdate` callback on updating a todo item.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 5. App Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Type of Tests
+- **Integration Tests:**
+  - Validate the integration of Header, Main, and Footer components.
+  - Test the overall rendering and behavior.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Test Cases
+1. Ensure that Header, Main, and Footer components are rendered within App.
+2. Validate the integration of state management between App and its child components.
 
-## Learn More
+## Running Tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Use the following command to run tests: `npm test`.
+- For coverage reports, use: `npm test -- --coverage`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Test coverage summary
+![Screenshot 2024-02-04 221829](https://github.com/Sharath-44/React-test-sei-Housewear/assets/93254961/cad82cc9-0f98-4d94-986a-333cd6c4cdea)
